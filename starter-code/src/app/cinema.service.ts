@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import * as _ from 'underscore';
+
 
 @Injectable()
 export class CinemaService {
@@ -114,12 +116,10 @@ getMovies(){
   }
 };
 
-getMovie(id) {
-  for (let movie = 0; movie < this.movies.length; movie++ ){
-    if (this.movies[movie].id === id){
-      return this.movies[movie].id;
-    }
-  }
+getMovie(idMovie: number): Object {
+  return _.findWhere(this.movies, { id: idMovie });
 };
+
+
 
 }
