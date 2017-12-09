@@ -120,6 +120,4 @@ getMovie(idMovie: number): Object {
   return _.findWhere(this.movies, { id: idMovie });
 };
 
-
-
 }
